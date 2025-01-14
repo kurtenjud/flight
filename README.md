@@ -17,4 +17,4 @@ A simple browser-based flight game where you control a plane by clicking. The pl
 ## Technologies Used
 - HTML5
 - CSS3
-- JavaScript (ES6+) 
+- JavaScript (ES6+)  
