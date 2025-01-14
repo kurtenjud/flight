@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    background: #47a8ce;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.sky {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.sun {
+    position: absolute;
+    width: 150px;
+    top: 50px;
+    right: 100px;
+}
+
+.plane {
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+    z-index: 100;
+}
+
+.mountains-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+}
+
+.mountain-layer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 0;
+}
+
+.mountain-layer img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.clouds-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cloud {
+    position: absolute;
+    width: 120px;
+    opacity: 0.8;
+    transition: transform 0.1s linear;
+} 
