@@ -33,11 +33,45 @@ class Game {
     }
 
     setupMountains() {
-        // ... existing setupMountains code ...
+        this.mountains = [];
+        const mountainImages = [
+            'mountain-1.svg',
+            'mountain-2.svg',
+            'mountain-3.svg',
+            'mountain-4.svg'
+        ];
+
+        this.mountainLayers.forEach((layer, index) => {
+            // Create just 2 mountains per layer for seamless scrolling
+            for (let i = 0; i < 2; i++) {
+                const img = document.createElement('img');
+                img.src = `images/${mountainImages[index]}`;
+                img.style.width = '100%'; // Make each mountain span full width
+                layer.appendChild(img);
+            }
+            
+            // Slower mountain movement
+            this.mountains.push(new GameElement(layer, 0.2 + (index * 0.2)));
+        });
     }
 
     setupClouds() {
-        // ... existing setupClouds code ...
+        this.clouds = [];
+        const cloudCount = 3; // Reduced number of clouds
+        
+        for (let i = 0; i < cloudCount; i++) {
+            const cloud = document.createElement('img');
+            cloud.src = 'images/cloud.svg';
+            cloud.className = 'cloud';
+            // Spread clouds vertically between 10% and 40% of screen height
+            cloud.style.top = `${10 + (Math.random() * 30)}%`;
+            // Spread clouds horizontally across the screen
+            cloud.style.left = `${(i * 33) + Math.random() * 20}%`;
+            this.cloudsContainer.appendChild(cloud);
+            
+            // Slower cloud movement
+            this.clouds.push(new GameElement(cloud, 0.3 + Math.random() * 0.2));
+        }
     }
 
     setupEventListeners() {
